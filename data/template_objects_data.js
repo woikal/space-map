@@ -1,0 +1,1 @@
+var objects = '{"objects":{"grids":[{"size":"small","position":{"x":252943,"y":171225,"z":50503}}]}}'

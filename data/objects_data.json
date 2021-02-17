@@ -1,0 +1,617 @@
+{
+    "asteroids": [],
+    "config": {
+        "spaceMaxSize": 10000,
+        "worldCenter": {
+            "y": 0,
+            "z": -9000,
+            "x": -9000
+        },
+        "offsets": {
+            "planet": 131072,
+            "moon": 16384
+        },
+        "planets": [
+            {
+                "name": "GasGiant",
+                "type": "planet",
+                "radius": 500,
+                "color": "#aaddff",
+                "position": {
+                    "x": "-9000000",
+                    "y": "0",
+                    "z": "-9000000"
+                }
+            },
+            {
+                "name": "Terra",
+                "type": "planet",
+                "radius": 60,
+                "color": "#2050b0",
+                "position": {
+                    "x": "-9131072",
+					"y": "-1131072",
+                    "z": "-131072"
+                },
+                "moons": [
+                    {
+                        "name": "Luna",
+                        "type": "moon",
+                        "radius": 9.5,
+                        "color": "#808080",
+                        "position": {
+                            "x": "-9000000",
+                            "y": "-880000",
+                            "z": "-130000"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Mars",
+                "type": "planet",
+                "radius": 60,
+                "color": "#b07020",
+                "position": {
+                    "x": "7900000",
+                    "y": "1000000",
+                    "z": "-3700000"
+                },
+                "moons": [
+                    {
+                        "name": "Europa",
+                        "type": "moon",
+                        "radius": 9.5,
+                        "color": "#99aaff",
+                        "position": {
+                            "x": "7900000",
+                            "y": "1000000",
+                            "z": "-3800000"
+                        }
+                    },
+                    {
+                        "name": "Titan",
+                        "type": "moon",
+                        "radius": 9.5,
+                        "color": "#ffbb33",
+                        "position": {
+                            "x": "8100000",
+                            "y": "1100000",
+                            "z": "-3300000"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Alien",
+                "type": "planet",
+                "radius": 60,
+                "color": "#308020",
+                "position": {
+                    "x": "0",
+                    "y": "0",
+                    "z": "7600000"
+                }
+            },
+            {
+                "name": "Triton",
+                "type": "planet",
+                "radius": 30,
+                "color": "#ddddff",
+                "position": {
+                    "x": "-350000",
+                    "y": "-2500000",
+                    "z": "300000"
+                }
+            },
+            {
+                "name": "Pertam",
+                "type": "planet",
+                "radius": 40,
+                "color": "#b07020",
+                "position": {
+                    "x": "-4000000",
+                    "y": "2065000",
+                    "z": "-800000"
+                }
+            }
+        ]
+    },
+    "grids": [
+        {
+            "id": "115861680188612047",
+            "name": "SEDE - Gate AlphaCentaury",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "122152176763769213",
+                "position": {
+                    "y": "-501166.01427486993",
+                    "z": "-691388.65085617756",
+                    "x": "-201316.09285143568"
+                }
+            },
+            "size": 1283
+        },
+        {
+            "id": "106023519321672037",
+            "name": "SEDE - Gate Terra Prime",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "75827092487380012",
+                "position": {
+                    "y": "-500201.70637478714",
+                    "z": "-700003.5551826962",
+                    "x": "8899869.8473074436"
+                }
+            },
+            "size": 1283
+        },
+        {
+            "id": "103411328774519314",
+            "name": "SEDE - Gate HomeLand 2",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "97828381867966848",
+                "position": {
+                    "y": "9945943.7792500816",
+                    "z": "10107947.307223976",
+                    "x": "9896506.9554720744"
+                }
+            },
+            "size": 1283
+        },
+        {
+            "id": "87937763451878143",
+            "name": "SEDE - Gate Helghan \u003e\u003e Korridan",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "138662071972970481",
+                "position": {
+                    "y": "37203.362760968819",
+                    "z": "1669336.2957511102",
+                    "x": "936510.633634588"
+                }
+            },
+            "size": 1283
+        },
+        {
+            "id": "84659114168493876",
+            "name": "SEDE - Gate Korridan \u003e\u003e Helghan",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "130991927553527979",
+                "position": {
+                    "y": "236710.64851860786",
+                    "z": "5697466.3442220921",
+                    "x": "90981.147579613287"
+                }
+            },
+            "size": 1283
+        },
+        {
+            "id": "82961916599655703",
+            "name": "SEDE - Gate Pertam \u003e\u003e Lanthia",
+            "type": "Large",
+            "static": null,
+            "position": {
+                "name": "138714465027762833",
+                "position": {
+                    "y": "20796.604987309511",
+                    "z": "-722021.6657923949",
+                    "x": "-3924768.6607161146"
+                }
+            },
+            "size": 1283
+        },
+        {
+            "id": "115171785154572510",
+            "name": "TNF XB01 Orbital Hydrogen Miner",
+            "type": "Small",
+            "static": null,
+            "position": {
+                "name": "135873438397510557",
+                "position": {
+                    "y": "-512501.96838434512",
+                    "z": "-723440.64263761532",
+                    "x": "8922065.6255416162"
+                }
+            },
+            "size": 291
+        },
+        {
+            "id": "136491858285941451",
+            "name": "SEDE - Gate Helghan \u003e\u003e Lanthia",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "79085468632708983",
+                "position": {
+                    "y": "45194.873495663982",
+                    "z": "1569264.3415306755",
+                    "x": "915821.88619484007"
+                }
+            },
+            "size": 1283
+        },
+        {
+            "id": "107304414553454723",
+            "name": "SEDE - Gate Lanthia \u003e\u003e Pertam",
+            "type": "Large",
+            "static": null,
+            "position": {
+                "name": "126983313402147010",
+                "position": {
+                    "y": "149405.9633345686",
+                    "z": "-113094.26874038039",
+                    "x": "-28532.976897865163"
+                }
+            },
+            "size": 1283
+        },
+        {
+            "id": "100070987041923679",
+            "name": "SEDE - Station Korridan",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "127639495541345941",
+                "position": {
+                    "y": "235436.61800634535",
+                    "z": "5730363.6824309165",
+                    "x": "100844.7477852274"
+                }
+            },
+            "size": 668
+        },
+        {
+            "id": "82445699367484777",
+            "name": "SEDE - Station Homeland 2",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "119900688812136144",
+                "position": {
+                    "y": "10001138.079892607",
+                    "z": "10064469.410209125",
+                    "x": "9947030.0329453275"
+                }
+            },
+            "size": 668
+        },
+        {
+            "id": "78859096626939985",
+            "name": "SEDE - Station Helghan",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "134333776868173545",
+                "position": {
+                    "y": "52520.6999947617",
+                    "z": "1617569.3278237469",
+                    "x": "954633.78514287423"
+                }
+            },
+            "size": 668
+        },
+        {
+            "id": "106700976822434172",
+            "name": "SEDE - Station Pertam",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "133505060758520739",
+                "position": {
+                    "y": "-25649.927984821359",
+                    "z": "-711388.09916666348",
+                    "x": "-3961294.2895335928"
+                }
+            },
+            "size": 668
+        },
+        {
+            "id": "131655277112928889",
+            "name": "SEDE - Station Lanthia",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "95083361052318912",
+                "position": {
+                    "y": "78600.185677296031",
+                    "z": "-60476.8635624469",
+                    "x": "-44685.6796979269"
+                }
+            },
+            "size": 668
+        },
+        {
+            "id": "120061016562516623",
+            "name": "SEDE - FF984 - V207 Tyr",
+            "type": "Small",
+            "static": null,
+            "position": {
+                "name": "105330162259937472",
+                "position": {
+                    "y": "-512563.15271623904",
+                    "z": "-723421.90240371716",
+                    "x": "8922096.4761275537"
+                }
+            },
+            "size": 1413
+        },
+        {
+            "id": "78719293103996450",
+            "name": "FF361 - GyroBohrer mk2",
+            "type": "Large",
+            "static": null,
+            "position": {
+                "name": "138663078275769196",
+                "position": {
+                    "y": "-512621.34637888247",
+                    "z": "-723496.97067153943",
+                    "x": "8922468.5286483057"
+                }
+            },
+            "size": 276
+        },
+        {
+            "id": "142550248259455740",
+            "name": "SEDE XB01 Expedition Base Pertam",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "119881706635446225",
+                "position": {
+                    "y": "10092865.068054706",
+                    "z": "10037958.500060417",
+                    "x": "10006905.391756425"
+                }
+            },
+            "size": 504
+        },
+        {
+            "id": "94602593657105487",
+            "name": "FF355 - Cepheus S-2 Kite",
+            "type": "Large",
+            "static": null,
+            "position": {
+                "name": "140713358128193795",
+                "position": {
+                    "y": "-599829.3665075812",
+                    "z": "-700244.30388090771",
+                    "x": "8899734.1174640432"
+                }
+            },
+            "size": 357
+        },
+        {
+            "id": "117512255759016716",
+            "name": "FF934 Drill Ion alpha",
+            "type": "Small",
+            "static": null,
+            "position": {
+                "name": "82809192784558999",
+                "position": {
+                    "y": "-512518.02649172122",
+                    "z": "-723453.54888713849",
+                    "x": "8922069.0737838037"
+                }
+            },
+            "size": 496
+        },
+        {
+            "id": "117614566738355302",
+            "name": "SEDE - Assgard",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "95335824913936871",
+                "position": {
+                    "y": "-512505.79808482091",
+                    "z": "-723424.3714183328",
+                    "x": "8922125.46873455"
+                }
+            },
+            "size": 4176
+        },
+        {
+            "id": "85751349137347751",
+            "name": "Mining ship Debris",
+            "type": "Small",
+            "static": null,
+            "position": {
+                "name": "85751349137347751",
+                "position": {
+                    "y": "251764.27111718038",
+                    "z": "5825092.9859307213",
+                    "x": "49934.655349593253"
+                }
+            },
+            "size": 3
+        },
+        {
+            "id": "90001838931789268",
+            "name": "SEDE - Shipyard Sleipnir",
+            "type": "Large",
+            "static": null,
+            "position": {
+                "name": "82944644654300969",
+                "position": {
+                    "y": "9945712.6981953941",
+                    "z": "10107924.1451146",
+                    "x": "9896416.8607455119"
+                }
+            },
+            "size": 244
+        },
+        {
+            "id": "130451637124595848",
+            "name": "Mining vessel Debris",
+            "type": "Small",
+            "static": "true",
+            "position": {
+                "name": "130451637124595848",
+                "position": {
+                    "y": "251764.59926894066",
+                    "z": "5825093.3062068122",
+                    "x": "49932.7855204322"
+                }
+            },
+            "size": null
+        },
+        {
+            "id": "95636686529543713",
+            "name": "Mining vessel Debris",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "95636686529543713",
+                "position": {
+                    "y": "251779.47719735742",
+                    "z": "5825084.8630954614",
+                    "x": "49966.654283987111"
+                }
+            },
+            "size": 2
+        },
+        {
+            "id": "85800500959193729",
+            "name": "Mining vessel Debris",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "85800500959193729",
+                "position": {
+                    "y": "251766.70230396534",
+                    "z": "5825096.1086418172",
+                    "x": "49935.63708740189"
+                }
+            },
+            "size": null
+        },
+        {
+            "id": "84896579614156266",
+            "name": "SEDE - Gate HomeLand 1",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "140775548862158238",
+                "position": {
+                    "y": "-599844.8333044562",
+                    "z": "-700343.345964648",
+                    "x": "8899981.8813495412"
+                }
+            },
+            "size": 1283
+        },
+        {
+            "id": "133631549713459469",
+            "name": "Mining vessel Debris",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "133631549713459469",
+                "position": {
+                    "y": "251766.81495317846",
+                    "z": "5825105.6774391206",
+                    "x": "49928.07620325523"
+                }
+            },
+            "size": 6
+        },
+        {
+            "id": "132405750741611955",
+            "name": "Encounter Mining Vessel",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "132405750741611955",
+                "position": {
+                    "y": "251775.68945972717",
+                    "z": "5825083.0603020377",
+                    "x": "49961.807453522095"
+                }
+            },
+            "size": 305
+        },
+        {
+            "id": "109053308847850402",
+            "name": "Mining vessel Debris",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "109053308847850402",
+                "position": {
+                    "y": "251779.43210382105",
+                    "z": "5825078.5032016626",
+                    "x": "49967.141893850392"
+                }
+            },
+            "size": 2
+        },
+        {
+            "id": "86471081889287896",
+            "name": "Mining vessel Debris",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "86471081889287896",
+                "position": {
+                    "y": "251783.94959333359",
+                    "z": "5825104.7155808108",
+                    "x": "49960.374770581475"
+                }
+            },
+            "size": 23
+        },
+        {
+            "id": "74768627359942163",
+            "name": "Mining vessel Debris",
+            "type": "Small",
+            "static": "true",
+            "position": {
+                "name": "74768627359942163",
+                "position": {
+                    "y": "251764.94046212768",
+                    "z": "5825093.6917743189",
+                    "x": "49934.083049907662"
+                }
+            },
+            "size": null
+        },
+        {
+            "id": "125378403151688228",
+            "name": "Mining vessel Debris",
+            "type": "Small",
+            "static": "true",
+            "position": {
+                "name": "125378403151688228",
+                "position": {
+                    "y": "251764.6425601042",
+                    "z": "5825092.8623169567",
+                    "x": "49932.137545737409"
+                }
+            },
+            "size": null
+        },
+        {
+            "id": "99086238069945568",
+            "name": "SEDE - Gate Lanthia \u003e\u003e Helghan",
+            "type": "Large",
+            "static": "true",
+            "position": {
+                "name": "84674718260343967",
+                "position": {
+                    "y": "110296.4085692798",
+                    "z": "-68360.34165495765",
+                    "x": "24268.005225568806"
+                }
+            },
+            "size": 1283
+        }
+    ]
+}
