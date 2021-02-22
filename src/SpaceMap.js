@@ -7,25 +7,24 @@ import {createRenderer} from '/src/services/renderer.js';
 import {createControls} from '/src/services/controls.js';
 import {createAmbientLight, createDirectionalLight} from "./services/lights.js";
 import {ObjectBuilder} from "./components/ObjectBuilder.js";
-import {mapToSector, toVector3} from "./services/helper";
+import {mapToSector} from "./services/helper";
 import {Satellite} from "./components/Satellite";
 
-let spaceMaxSize, offsets, baseline;
+let spaceMaxSize, offsets, baseline, sectorSize;
 let asteroids;
 let camera, scene, renderer, loop;
-
 
 class SpaceMap {
     constructor(container, config, data) {
         spaceMaxSize = config.spaceMaxSize;
-        baseline = -0;
+        baseline = -1000;
 
         offsets = new Map(Object.entries(config.offsets));
         offsets.forEach((offset, key) => {
             offsets.set(key, new Vector3(1, 1, 1).multiplyScalar(parseInt(offset) * 0.001));
         });
 
-        this.sectorSize = 250;
+        sectorSize = 250;
 
         this.system = config.system;
         asteroids = data.asteroids;
@@ -33,6 +32,7 @@ class SpaceMap {
 
         camera = new PerspectiveCamera(64, window.innerWidth / window.innerHeight, 1, spaceMaxSize * 4);
         camera.position.set(-1.3, 0.4, -1.3).multiplyScalar(spaceMaxSize * 1, 5);
+        camer.whee
 
         this.builder = new ObjectBuilder(offsets);
         const sun = createDirectionalLight();
@@ -49,7 +49,8 @@ class SpaceMap {
         scene.add(this.builder.createGrid(spaceMaxSize, -0.7));
 
         this.addSystem(this.system);
-        this.addAsteroids(data.asteroids);
+        scene.add(this.builder.createAsteroids(data.asteroids));
+        scene.add(this.builder.createAsteroids(data.safezones, 0xff9900,5));
         this.mapStructures(data.structures);
 
 
@@ -97,7 +98,7 @@ class SpaceMap {
         let sectors = new Map();
         let maxPerSector = 0;
         structures.forEach(structure => {
-            const pos = mapToSector(structure.position, this.sectorSize);
+            const pos = mapToSector(structure.position, sectorSize);
             const key = pos.x + '|' + pos.y + '|' + pos.z;
             sectors.set(key, {
                 pos: pos,
@@ -106,13 +107,9 @@ class SpaceMap {
             maxPerSector = Math.max(maxPerSector, sectors.get(key).count);
         });
         sectors.forEach(sector => {
-            scene.add(this.builder.createSector(sector.pos, this.sectorSize, sector.count, maxPerSector))
+            scene.add(this.builder.createSector(sector.pos, sectorSize, sector.count, maxPerSector))
         });
         scene.add(this.builder.createStructures(structures));
-    }
-
-    addAsteroids(asteroids) {
-        asteroids.forEach(asteroid => scene.add(this.builder.createAsteroid(asteroid)));
     }
 
     sphereOnClick(ev) {

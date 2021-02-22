@@ -43,10 +43,11 @@ export class ObjectBuilder {
         return new Line(geometry, lineMaterial);
     }
 
-    createAsteroids(asteroids) {
-        const material = new PointsMaterial({color: 0x9b9bac2, size: 2.0});
-        const geometry = new BufferGeometry();
-        asteroids.forEach(asteroid => geometry.vertices.push(asteroid.position.scale(0.001)));
+    createAsteroids(asteroids, color = 0xc9bac2, size= 4) {
+        const points = [];
+        asteroids.forEach(asteroid => points.push(toVector3(asteroid.position)));
+        const material = new PointsMaterial({color: color, size: size});
+        const geometry = new BufferGeometry().setFromPoints(points);
 
         return new Points(geometry, material);
     }
